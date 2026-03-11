@@ -1,68 +1,216 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+* {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background: #e8f7fc;
+  user-select: none;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+h2{
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+main{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main > form{
+  width: 90%;
+  max-width: 450px;
+  height: fit-content;
+  border-radius: 0.5rem;
+  background: rgb(255, 255, 255);
+  padding: 2%;
+}
+
+main > form > textarea{
+  width: 90%;
+}
+
+main > form > #two, main > form > #three{
+  display: flex;
+  justify-content: space-between;
+  gap: 2%;
+}
+
+main > form > #two > label{
+  width: 50%;
+}
+
+main > form > #two > label > input{
+  width: 100%;
+  padding: 3%;
+  border-radius: 0.42rem;
+  border: solid 0.02px rgba(0, 0, 0, 0.192);
+}
+
+main > form > #three{
+  display: flex;
+  width:100%;
+}
+
+main > form > #three> label{
+  display: flex;
+  flex-direction: column;
+  width:100%;
+}
+
+main > form > #three > label > input{
+  display: flex;
+  padding: 2%;
+  width:100%;
+  border: solid 0.02px rgba(0, 0, 0, 0.192);
+}
+
+#email{
+  border-radius: 0.42rem;
+  border: solid 0.02px rgba(0, 0, 0, 0.192);
+}
+
+main > form > #four {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+main > form > #four > div:nth-of-type(2) {
+  display: flex;
+  justify-content: space-between;
+  gap: 2%;
+}
+
+
+main > form > #four > div:nth-of-type(2) label {
+ border: solid 0.02px rgba(0, 0, 0, 0.192);
+ border-radius: 0.42rem;
+ width: 49%;
+ padding: 2%;
+ display: flex;
+ gap: 7%;
+}
+
+main > form > #five {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  
+}
+
+main > form > #five > div:nth-of-type(2)  {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 10vh;
+  gap: 1%;
+}
+
+main > form > #five > div:nth-of-type(2) textarea {
+  border: solid 0.02px rgba(0, 0, 0, 0.192);
+  width: 100%;
+  height: 100%;
+  border-radius: 0.42rem;
+  resize: none;
+}
+
+main > form > #six {
+  display: flex;
+  flex-direction: column;
+}
+
+main > form > #six > label{
+  display: flex;
+  gap: 3%;
+}
+
+main > form > #six > input[type="submit"]{
+  height: 4vh;
+}
+
+
+textarea{
+  padding: 3%;
+}
+
+input[type="submit"]{
+  background: hsl(169, 82%, 27%);
+  border: none;
+  color: white;
+  border-radius: 0.25rem;
+  transition: all 0.2s linear;
+}
+
+input[type="submit"]:hover{
+  background: #042e15;
+}
+
+input[type="text"]:focus, input[type="email"]:focus{
+  outline: hsl(169, 82%, 27%) solid 0.2px;
+}
+
+input[type="radio"],input[type="checkbox"] {
+  accent-color: hsl(169, 82%, 27%);
+}
+
+
+/* Responsive Styling */
+@media (max-width: 600px) {
+
+  main > form{
+    width: 95%;
+    padding: 16px;
   }
-  a:hover {
-    color: #747bff;
+
+  /* Stack first and last name */
+  main > form > #two{
+    flex-direction: column;
   }
-  button {
-    background-color: #f9f9f9;
+
+  main > form > #two > label{
+    width: 100%;
   }
+
+  /* Stack radio buttons */
+  main > form > #four > div:nth-of-type(2){
+    flex-direction: column;
+  }
+
+  main > form > #four > div:nth-of-type(2) label{
+    width: 100%;
+  }
+
+
+
+  main > form > #six{
+    width: 100%;
+  }
+
+  main > form > #six > label{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  main > form > #six > label span{
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+
+  main > form > #six > input[type="submit"]{
+    width: 100%;
+    height: 45px;
+  }
+
+  main > form > #four > div:nth-of-type(2) {
+    gap: 1vh;
+   }
+
 }
